@@ -1,0 +1,929 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILITOTO - Togel Online & Slot Terpercaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        @font-face {
+            font-family: 'MiSans-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'MiSans-Medium';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'MiSans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'MiSans-Regular', sans-serif;
+        }
+        
+        :root {
+            --primary: #ff0000;
+            --secondary: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --accent: #ff6600;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            width: 1200px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 1200px;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 32px;
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+            letter-spacing: 2px;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: translateZ(20px);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-family: 'MiSans-Medium', sans-serif;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'MiSans-Medium', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        
+        .btn-primary:hover {
+            transform: perspective(1000px) translateZ(10px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        
+        .btn-secondary:hover {
+            transform: perspective(1000px) translateZ(10px);
+            box-shadow: 0 8px 25px rgba(255, 204, 0, 0.6);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('https://assets-temp.lovart.ai/img/3a33225091ca4102b708eda6b9fa1533/0e7e4f40c9bd3ef3a2c4bb8f4611c7de239274263b22eecbfb90e7de84ca34ab.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            text-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-family: 'MiSans-Medium', sans-serif;
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: var(--light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            animation: pulse 2s infinite;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1) translateZ(0); }
+            50% { transform: scale(1.05) translateZ(20px); }
+            100% { transform: scale(1) translateZ(0); }
+        }
+        
+        /* Promo Section */
+        .promo {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+        
+        .section-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .promo-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .promo-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+        
+        .promo-card:hover {
+            transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateZ(20px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent);
+        }
+        
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+            opacity: 0;
+        }
+        
+        .promo-card:hover::before {
+            animation: shine 1.5s forwards;
+        }
+        
+        @keyframes shine {
+            0% { opacity: 0; transform: translateX(-100%) rotate(45deg); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .promo-icon {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .promo-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .promo-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+        
+        .feature-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 50px;
+        }
+        
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .feature-img {
+            flex: 1;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .feature-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            transform: perspective(1000px) rotateY(0);
+        }
+        
+        .feature-row:hover .feature-img img {
+            transform: perspective(1000px) rotateY(-5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-row:nth-child(even):hover .feature-img img {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .feature-description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* Games Section */
+        .games {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+        
+        .game-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .game-category {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+            cursor: pointer;
+        }
+        
+        .game-category:hover {
+            transform: perspective(1000px) translateZ(30px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent);
+        }
+        
+        .game-icon {
+            font-size: 48px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            transition: all 0.5s ease;
+        }
+        
+        .game-category:hover .game-icon {
+            transform: scale(1.2);
+            color: var(--accent);
+        }
+        
+        .game-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .game-description {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        /* Trust Section */
+        .trust {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trust-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .trust-img {
+            flex: 1;
+            position: relative;
+        }
+        
+        .trust-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .trust-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent) 0%, transparent 100%);
+            opacity: 0.3;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+        }
+        
+        .trust-img:hover::before {
+            opacity: 0.5;
+        }
+        
+        .trust-text {
+            flex: 1;
+        }
+        
+        .trust-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .trust-description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .trust-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .trust-feature {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trust-feature i {
+            color: var(--accent);
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .cta-text {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            animation: float 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) translateZ(0); }
+            50% { transform: translateY(-10px) translateZ(20px); }
+            100% { transform: translateY(0) translateZ(0); }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+            border-top: 2px solid var(--accent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-family: 'MiSans-Bold', sans-serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">SILI<span>TOTO</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#slot">Slot</a></li>
+                    <li><a href="#togel">Togel</a></li>
+                    <li><a href="#promo">Promosi</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-primary">Masuk</a>
+                <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">SILITOTO</h1>
+            <p class="hero-subtitle">Situs Togel Online & Slot Terpercaya di Indonesia dengan Bonus Terbesar dan Pembayaran Tercepat</p>
+            <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-primary hero-btn">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo" id="promo">
+        <div class="container">
+            <h2 class="section-title">Promosi Spesial</h2>
+            <div class="promo-cards">
+                <div class="promo-card">
+                    <i class="ri-qr-code-line promo-icon"></i>
+                    <h3 class="promo-title">DEPOSIT QRIS 5.000</h3>
+                    <p class="promo-text">Nikmati kemudahan deposit dengan QRIS mulai dari Rp 5.000. Proses instan dan aman untuk semua member.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Klaim Sekarang</a>
+                </div>
+                <div class="promo-card">
+                    <i class="ri-money-dollar-circle-line promo-icon"></i>
+                    <h3 class="promo-title">DEPO 10.000</h3>
+                    <p class="promo-text">Mulai bermain hanya dengan deposit Rp 10.000. Dapatkan bonus 10% untuk setiap deposit pertama Anda.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Klaim Sekarang</a>
+                </div>
+                <div class="promo-card">
+                    <i class="ri-bank-card-line promo-icon"></i>
+                    <h3 class="promo-title">WEDE 50.000</h3>
+                    <p class="promo-text">Penarikan dana minimal hanya Rp 50.000 dengan proses cepat dalam 3 menit ke semua bank lokal.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Klaim Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Fitur Unggulan</h2>
+            <div class="feature-row">
+                <div class="feature-img">
+                    <img src="https://assets-temp.lovart.ai/img/3a33225091ca4102b708eda6b9fa1533/c342783aa518a3fe3eb25f6e0488c07e1330c629134f27b598e414d4b99a3fe2.jpg" alt="SILITOTO Features">
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Togel Online Terlengkap</h3>
+                    <p class="feature-description">SILITOTO menyediakan berbagai pasaran togel terlengkap dengan diskon terbesar dan hadiah terbesar di Indonesia. Nikmati pengalaman bermain togel online dengan sistem yang aman dan terpercaya.</p>
+                    <ul class="feature-list">
+                        <li><i class="ri-check-line"></i> Pasaran togel internasional lengkap</li>
+                        <li><i class="ri-check-line"></i> Diskon besar hingga 70%</li>
+                        <li><i class="ri-check-line"></i> Hadiah 4D hingga x3000</li>
+                        <li><i class="ri-check-line"></i> Sistem keamanan terjamin</li>
+                    </ul>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-primary">Main Togel Sekarang</a>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-img">
+                    <img src="https://assets-temp.lovart.ai/img/3a33225091ca4102b708eda6b9fa1533/0d573d079a5f4bd0d1367ea17275fec6641b19a961cc4bce730465a60c3b5f2d.jpg" alt="SILITOTO Slot Games">
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Slot Online Terpopuler</h3>
+                    <p class="feature-description">Mainkan ratusan game slot online dari provider terbaik dunia dengan RTP tinggi dan jackpot besar. SILITOTO menjamin pengalaman bermain yang menyenangkan dengan grafis HD dan fitur bonus menarik.</p>
+                    <ul class="feature-list">
+                        <li><i class="ri-check-line"></i> Provider game ternama (Pragmatic Play, Habanero, dll)</li>
+                        <li><i class="ri-check-line"></i> RTP slot tertinggi hingga 98%</li>
+                        <li><i class="ri-check-line"></i> Bonus putaran gratis setiap hari</li>
+                        <li><i class="ri-check-line"></i> Jackpot progresif jutaan rupiah</li>
+                    </ul>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-primary">Main Slot Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games" id="games">
+        <div class="container">
+            <h2 class="section-title">Kategori Permainan</h2>
+            <div class="game-categories">
+                <div class="game-category" id="slot">
+                    <i class="ri-gamepad-line game-icon"></i>
+                    <h3 class="game-title">Slot Online</h3>
+                    <p class="game-description">Ratusan game slot online dengan tema menarik dan jackpot besar dari provider terkemuka dunia.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Main Sekarang</a>
+                </div>
+                <div class="game-category" id="togel">
+                    <i class="ri-numbers-line game-icon"></i>
+                    <h3 class="game-title">Togel Online</h3>
+                    <p class="game-description">Pasaran togel internasional lengkap dengan diskon besar dan hadiah melimpah untuk setiap kemenangan.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Main Sekarang</a>
+                </div>
+                <div class="game-category">
+                    <i class="ri-live-line game-icon"></i>
+                    <h3 class="game-title">Live Casino</h3>
+                    <p class="game-description">Rasakan sensasi bermain di kasino sungguhan dengan dealer langsung dan streaming HD berkualitas tinggi.</p>
+                    <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-secondary">Main Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust" id="about">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-img">
+                    <img src="https://assets-temp.lovart.ai/img/3a33225091ca4102b708eda6b9fa1533/8d3ef24031a001f364d671ea5ecebee5758a0fa49ab6fc890b9aed02a592485a.jpg" alt="SILITOTO Trust">
+                </div>
+                <div class="trust-text">
+                    <h3 class="trust-title">Mengapa Memilih SILITOTO?</h3>
+                    <p class="trust-description">SILITOTO adalah platform judi online terpercaya di Indonesia yang telah melayani ribuan pemain dengan sistem yang aman, transparan, dan profesional. Kami berkomitmen untuk memberikan pengalaman bermain terbaik dengan layanan 24/7.</p>
+                    <div class="trust-features">
+                        <div class="trust-feature">
+                            <i class="ri-shield-check-line"></i>
+                            <span>100% Aman & Terpercaya</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="ri-24-hours-line"></i>
+                            <span>Layanan 24/7</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="ri-bank-line"></i>
+                            <span>Transaksi Cepat</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="ri-customer-service-2-line"></i>
+                            <span>Dukungan Ramah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Bergabunglah Sekarang!</h2>
+            <p class="cta-text">Daftar sekarang dan dapatkan bonus sambutan hingga Rp 1.000.000 untuk memulai petualangan judi online Anda bersama SILITOTO.</p>
+            <a href="https://silitotoku.lat/register?referral_code=jeje03" class="btn btn-primary cta-btn">Daftar & Dapatkan Bonus</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SILITOTO</h3>
+                    <p>Situs togel online dan slot terpercaya dengan bonus terbesar dan pembayaran tercepat di Indonesia.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-telegram-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#slot">Slot Online</a></li>
+                        <li><a href="#togel">Togel Online</a></li>
+                        <li><a href="#promo">Promosi</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Permainan</h3>
+                    <ul>
+                        <li><a href="#slot">Slot Online</a></li>
+                        <li><a href="#togel">Togel Online</a></li>
+                        <li><a href="#">Live Casino</a></li>
+                        <li><a href="#">Sportsbook</a></li>
+                        <li><a href="#">Poker Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Bantuan</h3>
+                    <ul>
+                        <li><a href="#">Cara Daftar</a></li>
+                        <li><a href="#">Cara Deposit</a></li>
+                        <li><a href="#">Cara Withdraw</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SILITOTO. Semua Hak Dilindungi. Situs ini hanya untuk 18+ tahun.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add active class to navigation items when scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
